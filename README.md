@@ -1,4 +1,4 @@
-# HYF Final project boilerplate
+# Node.js React - listings boilerplate
 
 ## Setup instructions
 
