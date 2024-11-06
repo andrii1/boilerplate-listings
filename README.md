@@ -1,4 +1,4 @@
-# Node.js React - listings boilerplate
+# Boilerplate for listings - Node.js, React
 
 ## Setup instructions
 
