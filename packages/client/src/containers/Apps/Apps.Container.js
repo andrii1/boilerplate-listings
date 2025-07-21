@@ -590,31 +590,6 @@ export const Apps = () => {
       {/* <div className="hero"></div> */}
       <div className="hero">
         <h1 className="hero-header">Browse 200+ AI apps</h1>
-        <form className="home">
-          <label>
-            <FontAwesomeIcon className="search-icon" icon={faSearch} />
-            <input
-              type="text"
-              className="input-search-home"
-              onChange={handleSearch}
-              /* onFocus={handleClick} */
-              placeholder="I want to build..."
-            />
-          </label>
-        </form>
-        {searchTerms ? (
-          <div className="dropdown-search">
-            <ul>
-              {resultsHome.length > 0 ? (
-                dropdownList
-              ) : (
-                <span className="search-no-apps">No apps found :(</span>
-              )}
-            </ul>
-          </div>
-        ) : (
-          ''
-        )}
       </div>
       <section className={`container-topics ${showTopicsContainer && 'show'}`}>
         {topicsList}
@@ -628,7 +603,7 @@ export const Apps = () => {
           label="Topics"
           icon={<FontAwesomeIcon className="filter-icon" icon={faBookOpen} />}
         />
-         <DropDownView
+        <DropDownView
           // label="Sort"
           selectedOptionValue={sortOrder}
           className="no-line-height"
