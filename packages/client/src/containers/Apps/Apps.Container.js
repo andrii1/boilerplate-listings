@@ -27,7 +27,7 @@ export const Apps = () => {
   const location = useLocation();
   const { topicIdParam, categoryIdParam } = useParams();
   const [searchTerms, setSearchTerms] = useState();
-  const [sortOrder, setSortOrder] = useState();
+  const [sortOrder, setSortOrder] = useState('Recent');
   const [resultsHome, setResultsHome] = useState([]);
 
   const [topics, setTopics] = useState([]);
@@ -628,9 +628,19 @@ export const Apps = () => {
           label="Topics"
           icon={<FontAwesomeIcon className="filter-icon" icon={faBookOpen} />}
         />
-        <DropDownView
-          label="Sort"
+         <DropDownView
+          // label="Sort"
+          selectedOptionValue={sortOrder}
+          className="no-line-height"
           options={sortOptions}
+          // selectedOptionValue - can be removed
+          // selectedOptionValue={
+          //   pathname === '/' && orderByTrending
+          //     ? 'Trending'
+          //     : pathname !== '/'
+          //     ? 'Recent'
+          //     : undefined
+          // }
           onSelect={(option) => setSortOrder(option)}
           showFilterIcon={false}
         />

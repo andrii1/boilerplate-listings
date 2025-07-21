@@ -646,9 +646,7 @@ export const Prompts = () => {
       <div className="col-6">❤️</div> */}
       <div className="col-7">
         <div className="icons-prompts">
-          {user &&
-          allRatings.some((rating) => rating.prompt_id === prompt.id) &&
-          ratings.some((rating) => rating.id === prompt.id) ? (
+          {user && ratings.some((rating) => rating.id === prompt.id) ? (
             <button
               type="button"
               className="button-rating"

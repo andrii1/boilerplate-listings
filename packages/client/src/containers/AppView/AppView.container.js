@@ -423,7 +423,6 @@ export const AppView = () => {
               <div className="container-rating">
                 Rating
                 {user &&
-                allRatings.some((rating) => rating.app_id === app.id) &&
                 ratings.some((rating) => rating.id === app.id) ? (
                   <button
                     type="button"
