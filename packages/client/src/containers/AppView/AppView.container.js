@@ -125,6 +125,7 @@ export const AppView = () => {
   const [validForm, setValidForm] = useState(false);
   const [invalidForm, setInvalidForm] = useState(false);
   const [comment, setComment] = useState('');
+  const [commentError, setCommentError] = useState(null);
   const [allRatings, setAllRatings] = useState([]);
   const [ratings, setRatings] = useState([]);
   const [openConfirmationModal, setOpenConfirmationModal] = useState(false);
@@ -193,13 +194,13 @@ export const AppView = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!comment) {
-      setError('Comment is required!');
+      setCommentError('Comment is required!');
       setInvalidForm(true);
       setValidForm(false);
       return;
     }
     if (comment.trim().length < 5) {
-      setError('Comment must be more than five characters!');
+      setCommentError('Comment must be more than five characters!');
       setInvalidForm(true);
       setValidForm(false);
       return;
@@ -422,8 +423,7 @@ export const AppView = () => {
               <h3>What is {app.title}?</h3>
               <div className="container-rating">
                 Rating
-                {user &&
-                ratings.some((rating) => rating.id === app.id) ? (
+                {user && ratings.some((rating) => rating.id === app.id) ? (
                   <button
                     type="button"
                     className="button-rating"
@@ -604,7 +604,9 @@ export const AppView = () => {
                         toggle={() => setOpenConfirmationModal(false)}
                       />
                     )}
-                    {invalidForm && <p className="error-message">{error}</p>}
+                    {invalidForm && (
+                      <p className="error-message">{commentError}</p>
+                    )}
                   </form>
                 </div>
               </div>
